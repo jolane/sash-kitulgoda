@@ -1,0 +1,24 @@
+---
+name: Photography
+designedAt: Personal Project
+description: Studies in motion and typography.
+hero: /images/work/photography/photography-hero.jpg
+sections:
+  - type: image
+    src: /images/work/photography/photography01.jpg
+    alt: Typographic
+  - type: image
+    src: /images/work/photography/photography02.jpg
+    alt: Typographic
+  - type: image
+    src: /images/work/photography/photography03.jpg
+    alt: Typographic
+  - type: image
+    src: /images/work/photography/photography04.jpg
+    alt: Typographic
+  - type: image
+    src: /images/work/photography/photography05.jpg
+    alt: Typographic
+  - type: image
+    src: /images/work/photography/photography06.jpg
+    alt: Typographic

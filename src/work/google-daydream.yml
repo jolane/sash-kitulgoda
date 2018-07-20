@@ -1,0 +1,27 @@
+---
+name: Google Daydream
+designedAt: Designed at SouthSouthWest
+description: Daydream Impact is a platform designed to inspire and educate charity organisations about storytelling through VR.  We worked with Google to curate a selection of exceptional stories told through VR to inspire the next generation of storytellers.
+website: https://vr.google.com/daydream/
+hero: /images/work/daydream/daydream-hero.jpg
+sections:
+  - type: image
+    src: /images/work/daydream/daydream01.jpg
+    alt: Google Daydream
+  - type: image
+    src: /images/work/daydream/daydream02.jpg
+    alt: Google Daydream
+  - type: text
+    text: In order to distinguish the 4 levels of the new building we created new environments for each level of the building – Ocean, Savannah, Rainforest and Atmosphere. The shift in the pattern and environment reflecting the elevation of the building. We drew from motion and patterns that exist in the real world, and transformed them into dream-like patterns reflective of Daydream VR.
+  - type: image
+    src: /images/work/daydream/daydream03.jpg
+    alt: Google Daydream
+  - type: image
+    src: /images/work/daydream/daydream04.jpg
+    alt: Google Daydream
+  - type: image
+    src: /images/work/daydream/daydream05.jpg
+    alt: Google Daydream
+  - type: image
+    src: /images/work/daydream/daydream06.jpg
+    alt: Google Daydream

@@ -1,0 +1,19 @@
+---
+name: Cornwell
+designedAt: Designed at Cornwell
+description: With storytelling and craft being core pillars  of Cornwell’s brand philosophy, the new website was taken in a new and impactful visual direction. Existing brand collateral was also refreshed with a new art direction curated for each project.
+website: https://cornwell.com.au
+hero: /images/work/cornwell/cornwell-hero.jpg
+sections:
+  - type: image
+    src: /images/work/cornwell/cornwell01.jpg
+    alt: Cornwell Website
+  - type: image
+    src: /images/work/cornwell/cornwell02.jpg
+    alt: Cornwell Website
+  - type: image
+    src: /images/work/cornwell/cornwell03.jpg
+    alt: Cornwell Website
+  - type: image
+    src: /images/work/cornwell/cornwell04.jpg
+    alt: Cornwell Website
