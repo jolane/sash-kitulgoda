@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { scroller } from 'react-scroll'
 
 import { column } from '../styles'
 
@@ -53,8 +54,15 @@ export default ({ data }) => {
           )}
         </ContentBlock>
       </Grid>
-      <DownArrow />
-      <WorkContent>
+      <DownArrow
+        onClickArrowButton={() =>
+          scroller.scrollTo('work-content', {
+            duration: 400,
+            smooth: 'easeInOutQuart',
+          })
+        }
+      />
+      <WorkContent name="work-content">
         {sections.map((section, index) => renderContent(section, index))}
       </WorkContent>
       <ArrowButton to={`/work`}>Next Project</ArrowButton>

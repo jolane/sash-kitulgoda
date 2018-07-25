@@ -6,13 +6,14 @@ import { column } from '../styles'
 import ContentBlock from '../components/ContentBlock'
 import ListItemBlock from '../components/ListItemBlock'
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, navOpen }) => (
   <div>
     <Grid>
       <ContentBlock>
         Designer / Art Director<br />
         From Melbourne <br />
         Living in London
+        {navOpen}
       </ContentBlock>
       <ContentBlock>
         <p>

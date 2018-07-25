@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 import Helmet from 'react-helmet'
+import Waypoint from 'react-waypoint'
 
 import { container } from '../styles'
 
@@ -13,40 +14,29 @@ class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      backgroundAlpha: 1,
-      fontColor: '#fff',
+      navOpen: false,
     }
 
-    this.updateScrollPercentage = this.updateScrollPercentage.bind(this)
+    this.openNav = this.openNav.bind(this)
+    this.closeNav = this.closeNav.bind(this)
   }
-  componentDidMount() {
-    window.addEventListener('scroll', () => {
-      this.updateScrollPercentage()
-    })
-  }
-  updateScrollPercentage() {
-    // top should equal 1 && bottom should equal 0.05
-    const alpha =
-      1 -
-      window.pageYOffset /
-        (document.body.offsetHeight - window.innerHeight) *
-        0.95
 
-    if (alpha > 0.7) {
-      this.setState({ backgroundAlpha: 1, fontColor: '#fff' })
-    } else {
-      this.setState({ backgroundAlpha: 0.05, fontColor: '#000' })
-    }
+  openNav() {
+    const navOpen = true
+    this.setState({ navOpen })
   }
+
+  closeNav() {
+    const navOpen = false
+    this.setState({ navOpen })
+  }
+
   render() {
     const { children, data } = this.props
+    const { navOpen } = this.state
+    const { openNav, closeNav } = this
     return (
-      <SiteWrapper
-        style={{
-          backgroundColor: `rgba(0, 0, 0, ${this.state.backgroundAlpha}`,
-          color: this.state.fontColor,
-        }}
-      >
+      <SiteWrapper>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -55,7 +45,7 @@ class Layout extends React.Component {
           ]}
         />
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Main>{children()}</Main>
+        <Main>{children({ ...this.props, navOpen, closeNav, openNav })}</Main>
         <Footer />
       </SiteWrapper>
     )
@@ -89,7 +79,7 @@ injectGlobal`
     font-weight: normal;
   }
   body, html {
-	  background: #fff;
+	  background: #000;
 	  font-size: 14px;
 	  line-height: 1.57;
     color: #fff;
@@ -112,6 +102,7 @@ injectGlobal`
 const SiteWrapper = styled.div`
   padding-top: 40px;
   transition: all 0.5s linear;
+  background: rgba(0, 0, 0, 1);
 `
 
 const Main = styled.main`
