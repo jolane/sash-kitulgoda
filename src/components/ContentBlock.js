@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Waypoint from 'react-waypoint'
 
+import { lineAinmation } from '../styles'
+
 const Wrapper = styled.div`
   width: 100%;
   padding: 3em 0.75em 0 0;
@@ -10,22 +12,7 @@ const Wrapper = styled.div`
   position: relative;
   opacity: 0.05;
   transition: all 0.5s ease-in;
-  &:before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: currentColor;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: width 0.5s ease-in;
-    ${props =>
-      props.inViewport &&
-      `
-      width: 100%;
-    `};
-  }
+  ${lineAinmation};
 
   ${props =>
     props.inViewport &&
