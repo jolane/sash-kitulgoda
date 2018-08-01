@@ -11,6 +11,8 @@ import DownArrow from '../components/DownArrow'
 
 // Sections
 import FullWidthImage from '../components/sections/FullWidthImage'
+import ThreeImages from '../components/sections/ThreeImages'
+import TwoImages from '../components/sections/TwoImages'
 
 const renderContent = (section, index) => {
   switch (section.type) {
@@ -29,6 +31,25 @@ const renderContent = (section, index) => {
             <p>{section.text}</p>
           </ContentBlock>
         </TextBlock>
+      )
+    case 'threeImages':
+      return (
+        <ThreeImages
+          key={(section.type, index)}
+          src1={section.src1}
+          src2={section.src2}
+          src3={section.src3}
+          alt={section.alt}
+        />
+      )
+    case 'twoImages':
+      return (
+        <TwoImages
+          key={(section.type, index)}
+          src1={section.src1}
+          src2={section.src2}
+          alt={section.alt}
+        />
       )
   }
 }
@@ -81,6 +102,10 @@ export const workQuery = graphql`
         type
         src
         text
+        src1
+        src2
+        src3
+        alt
       }
     }
   }

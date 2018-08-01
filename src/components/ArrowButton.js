@@ -21,7 +21,10 @@ export default ({ children, to, title, onClickArrowButton, href }) => {
     >
       {children}
       <Svg width="32px" height="10px" viewBox="0 0 32 10" version="1.1">
-        <g transform="translate(-491.000000, -1861.000000)" stroke="#ffffff">
+        <g
+          transform="translate(-491.000000, -1861.000000)"
+          stroke="currentColor"
+        >
           <g transform="translate(508.000000, 1866.000000) rotate(-360.000000) translate(-508.000000, -1866.000000) translate(492.000000, 1861.000000)">
             <g>
               <path d="M0,5 L30,5" strokeWidth="0.5" />
@@ -43,7 +46,7 @@ export default ({ children, to, title, onClickArrowButton, href }) => {
 
 // Styles
 const ArrowButtonWrapper = styled.button`
-  color: white;
+  color: inherit;
   background-color: transparent;
   border: 0;
   margin: 0;

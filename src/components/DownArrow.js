@@ -5,7 +5,7 @@ export default ({ onClickArrowButton }) => {
   return (
     <ArrowButtonWrapper onClick={onClickArrowButton}>
       <svg width="10px" height="32px" viewBox="0 0 10 32">
-        <g transform="translate(-40.000000, -723.000000)" stroke="#FFFFFF">
+        <g transform="translate(-40.000000, -723.000000)" stroke="currentColor">
           <g transform="translate(45.000000, 740.000000) rotate(-270.000000) translate(-45.000000, -740.000000) translate(29.000000, 735.000000)">
             <path d="M0,5 L30,5" strokeWidth="0.5" />
             <g
@@ -25,6 +25,7 @@ export default ({ onClickArrowButton }) => {
 
 // Styles
 const ArrowButtonWrapper = styled.button`
+  color: inherit;
   padding: 0;
   border: 0;
   background-color: transparent;

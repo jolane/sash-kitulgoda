@@ -10,3 +10,7 @@ sections:
   - type: image
     src: /images/work/nike/nike02.jpg
     alt: Nike Website
+  - type: twoImages
+    src1: /images/work/nike/nike03.jpg
+    src2: /images/work/nike/nike04.jpg
+    alt: Nike Test

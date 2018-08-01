@@ -15,10 +15,12 @@ class Layout extends React.Component {
     super(props)
     this.state = {
       navOpen: false,
+      light: false,
     }
 
     this.openNav = this.openNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
+    this.updateLightState = this.updateLightState.bind(this)
   }
 
   openNav() {
@@ -31,12 +33,17 @@ class Layout extends React.Component {
     this.setState({ navOpen })
   }
 
+  updateLightState(bool) {
+    const light = bool
+    this.setState({ light })
+  }
+
   render() {
     const { children, data } = this.props
     const { navOpen } = this.state
     const { openNav, closeNav } = this
     return (
-      <SiteWrapper>
+      <SiteWrapper light={this.state.light}>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -44,7 +51,12 @@ class Layout extends React.Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
+        <ColorChangeArea />
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Waypoint
+          onEnter={() => this.updateLightState(false)}
+          onLeave={() => this.updateLightState(true)}
+        />
         <Main>{children({ ...this.props, navOpen, closeNav, openNav })}</Main>
         <Footer />
       </SiteWrapper>
@@ -79,10 +91,10 @@ injectGlobal`
     font-weight: normal;
   }
   body, html {
-	  background: #000;
+	  background: #fff;
 	  font-size: 14px;
 	  line-height: 1.57;
-    color: #fff;
+    color: #000;
     font-family: "BrownStd", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
@@ -103,8 +115,24 @@ const SiteWrapper = styled.div`
   padding-top: 40px;
   transition: all 0.5s linear;
   background: rgba(0, 0, 0, 1);
+  color: #fff;
+  min-height: 100vh;
+  ${props =>
+    props.light &&
+    `
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+  `};
 `
 
 const Main = styled.main`
   ${container};
+`
+
+const ColorChangeArea = styled(Waypoint)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 120vh;
 `

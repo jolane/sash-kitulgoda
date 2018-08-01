@@ -33,7 +33,7 @@ export default Header
 const Wrapper = styled.header`
   ${container};
   margin: 0 auto 40px;
-  border-top: 1px solid white;
+  border-top: 1px solid currentColor;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

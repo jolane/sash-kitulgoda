@@ -17,3 +17,8 @@ sections:
   - type: image
     src: /images/work/cornwell/cornwell04.jpg
     alt: Cornwell Website
+  - type: threeImages
+    src1: /images/work/cornwell/cornwell05.jpg
+    src2: /images/work/cornwell/cornwell06.jpg
+    src3: /images/work/cornwell/cornwell07.jpg
+    alt: Cornwell Website Mobile screenshot
