@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   position: relative;
   opacity: 0.05;
-  transition: all 0.5s ease-in;
+  transition: opacity 0.5s ease-in, padding 0.5s ease-in;
   ${lineAinmation};
 
   ${props =>
