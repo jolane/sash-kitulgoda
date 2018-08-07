@@ -6,6 +6,9 @@ export const container = css`
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 786px) {
+    width: 87.5%;
+  }
 `
 
 export const column = css`

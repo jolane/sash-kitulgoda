@@ -26,11 +26,13 @@ class Layout extends React.Component {
   openNav() {
     const navOpen = true
     this.setState({ navOpen })
+    document.body.style.overflow = 'hidden'
   }
 
   closeNav() {
     const navOpen = false
     this.setState({ navOpen })
+    document.body.style.overflow = 'auto'
   }
 
   updateLightState(bool) {
@@ -52,13 +54,18 @@ class Layout extends React.Component {
           ]}
         />
         <ColorChangeArea />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          navOpen={this.state.navOpen}
+          openNav={this.openNav}
+          closeNav={this.closeNav}
+        />
         <Waypoint
           onEnter={() => this.updateLightState(false)}
           onLeave={() => this.updateLightState(true)}
         />
         <Main>{children({ ...this.props, navOpen, closeNav, openNav })}</Main>
-        <Footer />
+        <Footer navOpen={this.state.navOpen} />
       </SiteWrapper>
     )
   }

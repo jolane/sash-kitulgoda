@@ -52,6 +52,11 @@ const ArrowButtonWrapper = styled.button`
   margin: 0;
   padding: 0;
   cursor: pointer;
+  @media screen and (max-width: 786px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 const Svg = styled.svg`

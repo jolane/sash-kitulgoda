@@ -14,6 +14,10 @@ const Grid = styled.div`
   align-items: flex-start;
   margin-bottom: 100px;
 
+  @media screen and (max-width: 786px) {
+    flex-direction: column;
+  }
+
   > div {
     ${column};
     > *:first-child {

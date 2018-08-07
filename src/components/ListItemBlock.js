@@ -54,6 +54,14 @@ const Wrapper = styled(Link)`
       transform: translateY(0);
       opacity: 1;
     `};
+  @media screen and (max-width: 786px) {
+    padding-left: 0;
+    flex-direction: column;
+
+    & + & {
+      margin-top: 40px;
+    }
+  }
 `
 
 const Title = styled.h4`
@@ -66,12 +74,22 @@ const Title = styled.h4`
   margin: 0;
   ${column};
   ${lineAinmation};
+  @media screen and (max-width: 786px) {
+    position: static;
+    margin-bottom: 1.2em;
+    display: block;
+    padding-top: 0;
+    &:before {
+      display: none;
+    }
+  }
 `
 const Content = styled.div`
   width: 100%;
   padding-bottom: 56.3%;
   position: relative;
 `
+
 const SrinkOnHover = styled.div`
   position: absolute;
   transition: all 0.4s linear;

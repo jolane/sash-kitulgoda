@@ -20,6 +20,12 @@ const Wrapper = styled.div`
       padding-top: 1.5em;
       opacity: 1;
     `};
+
+  @media screen and (max-width: 786px) {
+    & + & {
+      margin-top: 2.5em;
+    }
+  }
 `
 
 class ContentBlock extends React.Component {
