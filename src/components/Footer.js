@@ -12,7 +12,7 @@ const Footer = ({ navOpen }) => (
       <Col>
         <FooterLink href="mailto:sash@sash.com" title="Say Hello">
           Say Hello
-          <ArrowButton />
+          <ArrowButton hideOnDesktop={true} />
         </FooterLink>
         <FooterLink
           href="https://www.instagram.com/sashsash_/"
@@ -20,7 +20,7 @@ const Footer = ({ navOpen }) => (
           target="_blank"
         >
           Instagram
-          <ArrowButton />
+          <ArrowButton hideOnDesktop={true} />
         </FooterLink>
         <FooterLink
           href="https://www.linkedin.com/in/sash-kitulgoda-893a41a8/"
@@ -28,7 +28,7 @@ const Footer = ({ navOpen }) => (
           title="Linkedin"
         >
           LinkedIn
-          <ArrowButton />
+          <ArrowButton hideOnDesktop={true} />
         </FooterLink>
       </Col>
       {!navOpen && <Col>© Sash Kitulgoda</Col>}
@@ -90,7 +90,7 @@ const Col = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 2em;
-    width: 100%;
+    width: 100% !important;
   }
 `
 
@@ -98,11 +98,6 @@ const FooterLink = styled.a`
   display: inline-block;
   color: inherit;
   text-decoration: none;
-
-  button: {
-    display: none;
-  }
-
   & + & {
     margin-left: 2.86em;
   }
@@ -114,9 +109,6 @@ const FooterLink = styled.a`
     margin-bottom: 2em;
     & + & {
       margin-left: 0;
-    }
-    button: {
-      display: inline-block;
     }
   }
 `

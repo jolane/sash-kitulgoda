@@ -2,7 +2,14 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-export default ({ children, to, title, onClickArrowButton, href }) => {
+export default ({
+  children,
+  to,
+  title,
+  onClickArrowButton,
+  href,
+  hideOnDesktop,
+}) => {
   var ArrowButtonSwitch = ArrowButtonWrapper
 
   if (to && !onClickArrowButton) {
@@ -18,6 +25,7 @@ export default ({ children, to, title, onClickArrowButton, href }) => {
       href={href}
       title={title}
       target={href ? `_blank` : null}
+      hideOnDesktop={hideOnDesktop}
     >
       {children}
       <Svg width="32px" height="10px" viewBox="0 0 32 10" version="1.1">
@@ -52,6 +60,7 @@ const ArrowButtonWrapper = styled.button`
   margin: 0;
   padding: 0;
   cursor: pointer;
+  ${props => props.hideOnDesktop && `display: none;`};
   @media screen and (max-width: 786px) {
     display: flex;
     flex-direction: row;
