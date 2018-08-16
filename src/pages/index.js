@@ -27,17 +27,19 @@ const IndexPage = ({ data, navOpen }) => (
         </p>
       </ContentBlock>
     </Grid>
-    {data.allWorkYaml.edges.map(node => {
-      const { fields, name, hero } = node.node
-      return (
-        <ListItemBlock
-          title={name}
-          to={fields.slug}
-          src={hero}
-          key={fields.slug}
-        />
-      )
-    })}
+    {data.allWorkYaml.edges
+      .sort((a, b) => a.node.order - b.node.order)
+      .map(node => {
+        const { fields, name, hero } = node.node
+        return (
+          <ListItemBlock
+            title={name}
+            to={fields.slug}
+            src={hero}
+            key={fields.slug}
+          />
+        )
+      })}
   </div>
 )
 
@@ -50,6 +52,7 @@ export const IndexQuery = graphql`
         node {
           name
           hero
+          order
           fields {
             slug
           }
