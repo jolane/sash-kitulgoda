@@ -1,8 +1,8 @@
----
 name: Typographic Experiments
 designedAt: Personal Project
 description: Studies in motion and typography.
 hero: /images/work/tyopgraphy/tyopgraphy-hero.jpg
+order: 7
 sections:
   - type: image
     src: /images/work/tyopgraphy/tyopgraphy01.jpg

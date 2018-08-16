@@ -55,7 +55,28 @@ const renderContent = (section, index) => {
 }
 
 export default ({ data }) => {
-  const { name, designedAt, description, website, sections } = data.workYaml
+  const {
+    name,
+    designedAt,
+    description,
+    website,
+    sections,
+    fields,
+  } = data.workYaml
+
+  // get next link
+  const orderedWorkList = data.allItems.edges.sort(
+    (a, b) => a.node.order - b.node.order
+  )
+  const thisIndex = orderedWorkList.findIndex(
+    item => item.node.fields.slug === fields.slug
+  )
+
+  let nextProjectObject = orderedWorkList[0]
+  if (thisIndex !== orderedWorkList.length - 1) {
+    nextProjectObject = orderedWorkList[thisIndex + 1]
+  }
+
   return (
     <div>
       <Grid>
@@ -86,7 +107,12 @@ export default ({ data }) => {
       <WorkContent name="work-content">
         {sections.map((section, index) => renderContent(section, index))}
       </WorkContent>
-      <ArrowButton to={`/work`}>Next Project</ArrowButton>
+      <ArrowButton
+        to={nextProjectObject.node.fields.slug}
+        title={nextProjectObject.node.name}
+      >
+        Next Project
+      </ArrowButton>
     </div>
   )
 }
@@ -98,6 +124,9 @@ export const workQuery = graphql`
       designedAt
       website
       description
+      fields {
+        slug
+      }
       sections {
         type
         src
@@ -106,6 +135,17 @@ export const workQuery = graphql`
         src2
         src3
         alt
+      }
+    }
+    allItems: allWorkYaml {
+      edges {
+        node {
+          name
+          order
+          fields {
+            slug
+          }
+        }
       }
     }
   }

@@ -1,8 +1,8 @@
----
 name: Photography
 designedAt: Personal Project
 description: Studies in motion and typography.
 hero: /images/work/photography/photography-hero.jpg
+order: 6
 sections:
   - type: image
     src: /images/work/photography/photography01.jpg

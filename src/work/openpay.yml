@@ -1,9 +1,9 @@
----
 name: Openpay
 designedAt: Designed at Cornwell
 description: A refresh of the brand also required  an overhaul of their existing website. Reworking all touchpoints and interactions to reflect the brand value of simplicity and openness.
 website: https://www.openpay.com.au/
 hero: /images/work/openpay/openpay-hero.jpg
+order: 5
 sections:
   - type: image
     src: /images/work/openpay/openpay01.jpg

@@ -1,9 +1,9 @@
----
 name: Google Daydream
 designedAt: Designed at SouthSouthWest
 description: Daydream Impact is a platform designed to inspire and educate charity organisations about storytelling through VR.  We worked with Google to curate a selection of exceptional stories told through VR to inspire the next generation of storytellers.
 website: https://vr.google.com/daydream/
 hero: /images/work/daydream/daydream-hero.jpg
+order: 1
 sections:
   - type: image
     src: /images/work/daydream/daydream01.jpg
