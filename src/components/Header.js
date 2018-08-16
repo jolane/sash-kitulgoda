@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
-import ArrowButton from '../components/ArrowButton'
+import ArrowButton from './ArrowButton'
+import UnderlineAnimation from './UnderlineAnimation'
 
 import { container } from '../styles'
 
@@ -21,9 +22,12 @@ const Header = ({ siteTitle, openNav, closeNav, navOpen }) => (
         activeClassName="active"
         onClick={() => closeNav()}
         exact
+        onMouseOver={() => console.log()}
       >
-        Work
-        <ArrowButton />
+        <UnderlineAnimation>
+          Work
+          <ArrowButton />
+        </UnderlineAnimation>
       </Link>
       <Link
         to="/info"
@@ -32,8 +36,10 @@ const Header = ({ siteTitle, openNav, closeNav, navOpen }) => (
         onClick={() => closeNav()}
         exact
       >
-        Info
-        <ArrowButton />
+        <UnderlineAnimation>
+          Info
+          <ArrowButton />
+        </UnderlineAnimation>
       </Link>
     </Nav>
     <NavToggle onClick={() => (navOpen ? closeNav() : openNav())}>

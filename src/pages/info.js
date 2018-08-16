@@ -10,13 +10,30 @@ class InfoPage extends React.Component {
     super()
 
     this.state = {
-      backgroundImage: '/images/info01.jpg',
+      backgroundImage: '/images/info/creative-world.gif',
     }
     this.updateBackgroundImage = this.updateBackgroundImage.bind(this)
   }
 
+  componentDidMount() {
+    const imgObjs = []
+    ;[
+      'creative-world',
+      'business',
+      'watch-paint-dry',
+      'marketing-and-advertising',
+      'havent-looked-back',
+      'digital-experiences',
+      'young-lion',
+      'london',
+      'melbourne',
+    ].forEach(imgName => {
+      new Image().src = `/images/info/${imgName}.gif`
+    })
+  }
+
   updateBackgroundImage(imageBaseName) {
-    const backgroundImage = `/images/${imageBaseName}.jpg`
+    const backgroundImage = `/images/info/${imageBaseName}.gif`
     this.setState({ backgroundImage })
   }
 
@@ -28,29 +45,35 @@ class InfoPage extends React.Component {
             <p>
               Before venturing into the{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info02')}
+                onMouseOver={() => this.updateBackgroundImage('creative-world')}
               >
                 creative world
               </HoverPoint>{' '}
               I tried to make my parents happy by studying{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info03')}
+                onMouseOver={() => this.updateBackgroundImage('business')}
               >
                 business
               </HoverPoint>. I walked into my first finance lecture and realised
               I’d rather{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info04')}
+                onMouseOver={() =>
+                  this.updateBackgroundImage('watch-paint-dry')
+                }
               >
                 watch paint dry
               </HoverPoint>. I escaped with a major in{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info05')}
+                onMouseOver={() =>
+                  this.updateBackgroundImage('marketing-and-advertising')
+                }
               >
                 marketing and advertising
               </HoverPoint>, enrolled in design school and{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info06')}
+                onMouseOver={() =>
+                  this.updateBackgroundImage('havent-looked-back')
+                }
               >
                 haven’t looked back
               </HoverPoint>.
@@ -58,23 +81,35 @@ class InfoPage extends React.Component {
             <p>
               In my career so far I’ve crafted{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info07')}
+                onMouseOver={() =>
+                  this.updateBackgroundImage('digital-experiences')
+                }
               >
                 digital experiences
               </HoverPoint>{' '}
               for the likes of Google, Nike and Toyota; been a finalist for a
               Cannes{' '}
               <HoverPoint
-                onMouseOver={() => this.updateBackgroundImage('info08')}
+                onMouseOver={() => this.updateBackgroundImage('young-lion')}
               >
                 Young Lion
               </HoverPoint>{' '}
               and helped re-brand a number of start-ups.
             </p>
             <p>
-              I’ve recently moved from <HoverPoint>Melbourne</HoverPoint> to{' '}
-              <HoverPoint>London</HoverPoint> and am looking for freelance and
-              full time opportunities.
+              I’ve recently moved from{' '}
+              <HoverPoint
+                onMouseOver={() => this.updateBackgroundImage('melbourne')}
+              >
+                Melbourne
+              </HoverPoint>{' '}
+              to{' '}
+              <HoverPoint
+                onMouseOver={() => this.updateBackgroundImage('london')}
+              >
+                London
+              </HoverPoint>{' '}
+              and am looking for freelance and full time opportunities.
             </p>
           </ContentBlock>
           <ContentBlock>
@@ -108,6 +143,7 @@ const PageWrapper = styled.div`
 `
 
 const HoverPoint = styled.span`
+  cursor: pointer;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
